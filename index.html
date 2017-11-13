@@ -8,22 +8,23 @@
     <meta property="og:description" content="An app that combines the lasting memories of travel with a conservation mindset, turning globetrotters into globe-savers">
     <meta property="og:url" content="http://www.endangeredtravel.com" />
     <meta property="og:image" content="https://media1.fdncms.com/northcoast/imager/u/original/4714368/marten.jpg" />
-    <link rel="stylesheet" type="text/css" href="/base.css">
-    <link rel="stylesheet" type="text/css" href="/layout.css">
-    <link rel="stylesheet" type="text/css" href="/module.css">
-    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="./styles/base.css">
+    <link rel="stylesheet" type="text/css" href="./styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="./styles/module.css">
   </head>
   <body>
+    <header>
+      <h1>Travel Wild</h1>
 
-  //add background image that scales
-
-  //add in drop down menu(centered and scaled)
+    </header>
   <select name="country"></select>
-
-
-
-
   </body>
-  <script src="/wildlife.js" type="text/javascript"></script>
-  <script src="/wildlife-view.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" type="text/javascript"></script>
+  <script src="scripts/views/routes.js" type="text/javascript"></script>
+  <script src="scripts/models/wildlife.js" type="text/javascript"></script>
+  <script src="scripts/views/wildlife-view.js" type="text/javascript"></script>
 </html>
