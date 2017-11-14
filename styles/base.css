@@ -14,6 +14,7 @@ select {
   height: 5em;
   background-color: cornsilk;
   font-size: 1em;
+  color: rgb(80, 80, 80);
 }
 
 h1 {
@@ -31,4 +32,28 @@ h1 {
   border: 2px solid rgb(255, 0, 0);
   border-radius: 10px;
   color: white;
+}
+
+.link-info {
+  font-size: 1em;
+  background-color: rgba(228, 172, 98, 0.8);
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 3em;
+  padding: 2em;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.about-us {
+  font-size: 2em;
+  background-color: rgba(228, 172, 98, 0.8);
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 1em;
+  color: black;
 }
