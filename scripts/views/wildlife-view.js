@@ -21,6 +21,13 @@ $('select[name="country"]').on('change', function(event) {
             // console.log(commonData)
             $('#results-common').append(`<h3>Common Name: ${commonData.result[0].taxonname}</h3>`)
           })
+        $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
+            .then(commonData => {
+              // console.log(data);
+              commonData = JSON.parse(commonData);
+              // console.log(commonData)
+              $('#results-common').append(`<h3>Common Name: ${commonData.result[0].taxonname}</h3>`)
+            })
       }
     })
 })
