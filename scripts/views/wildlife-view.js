@@ -11,17 +11,16 @@ $('select[name="country"]').on('change', function(event) {
       data = JSON.parse(data);
       for(let i = 0; i < 5; i++) {
         randomIndex = Math.floor(Math.random()*data.result.length);
-        $('#results').append(`<h6>Scientific Name: ${data.result[randomIndex].scientific_name}</h6><p>Animal ID: ${data.result[randomIndex].taxonid}</p>`)
+        $('#results-scientific').append(`<h6>Scientific Name: ${data.result[randomIndex].scientific_name}</h6><p>Animal ID: ${data.result[randomIndex].taxonid}</p>`)
+        let commonName = data.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
+        console.log(commonName.toLowerCase());
+        $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
+          .then(commonData => {
+            // console.log(data);
+            commonData = JSON.parse(commonData);
+            // console.log(commonData)
+            $('#results-common').append(`<h3>Common Name: ${commonData.result[0].taxonname}</h3>`)
+          })
       }
-      let commonName = data.result[0].scientific_name.toLowerCase().replace(' ', '%20');
-      console.log(commonName.toLowerCase());
-      $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
-        .then(commonData => {
-          console.log(data);
-          commonData = JSON.parse(commonData);
-          console.log(commonData)
-          $('#results').append(`<h3>Common Name: ${commonData.result[0].taxonname}</h3>`)
-
-        })
     })
 })
