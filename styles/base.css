@@ -18,8 +18,17 @@ select {
 
 h1 {
   font-size: 8em;
+  margin-top: 2em;
 }
 
-h3, h6 {
-  font-size: 3em;
+#results {
+  font-size: 2em;
+  background-color: rgba(255, 0, 0, 0.8);
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 3em;
+  padding: 1em;
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 10px;
+  color: white;
 }
