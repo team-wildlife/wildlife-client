@@ -5,7 +5,7 @@ var app = app || {};
 const __API_URL__ = 'http://localhost:3000';
 
 ((module) => {
-  animalView.all = {};
+  Animal.all = [];
 
   function errorCallback(err) {
     console.error(err);
@@ -17,12 +17,12 @@ const __API_URL__ = 'http://localhost:3000';
   }
 
   Animal.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#').text());
+    var template = Handlebars.compile($('#country').text());
     return template(this);
   };
 
   Animal.addDescription = function(data) {
-    var template = Handlebars.compile($('#').text());
+    var template = Handlebars.compile($('#country').text());
     return template(data);
   };
 
@@ -38,21 +38,39 @@ const __API_URL__ = 'http://localhost:3000';
       .catch(errorCallback)
   }
 
-  Animal.insertFormValues = data => {
-    $('#').attr('', data.id);
-    $('#').val(data.);
-    $('#').val(data.);
-    $('#').val(data.);
-    $('#').val(data.);
-    $('#').val(data.);
+  Animal.fetchAll = callback => {
+    console.log('fetchAll function called');
+    $.get(`${__API_URL__}/`)
+      .then(Animal.loadAll)
+      .then(callback)
+      .catch(errorCallback)
   }
 
-  Animal.prototype.insertRecord = function(callback) {
-    $.post(`${__API_URL__}/`, {})
-      .then(app.Animal.fetchAll())
+  Animal.fetchAll = callback => {
+    console.log('fetchAll function called');
+    $.get(`${__API_URL__}/`)
+      .then(Animal.loadAll)
       .then(callback)
-  };
+      .catch(errorCallback)
+  }
+
+  // Animal.prototype.insertRecord = function(callback) {
+  //   $.post(`${__API_URL__}/`, {})
+  //     .then(app.Animal.fetchAll())
+  //     .then(callback)
+  // };
 
 
   module.Animal = Animal;
 })(app);
+
+
+
+Animal.all.handleAnimalSelection = () => {
+  $('#country').on('click', '.country', function() {
+    $('#country .country').hide();
+    $('#country').empty();
+    $('#country').fadeIn();
+    app.Animal.fetchAll($(this).data('fetchAll'));
+  });
+};

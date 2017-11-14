@@ -12,8 +12,6 @@ $('select[name="country"]').on('change', function(event) {
     })
 })
 
-
-
 // $.get(`http://apiv3.iucnredlist.org/api/v3/species/common_names/loxodonta%20africana?token=${REDLIST_TOKEN}`)
 //   .then(data => $('#results').append(`<h3>Animal: ${data.result[0].taxonname}</h3>`))
 
