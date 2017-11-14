@@ -31,7 +31,6 @@ $('select[name="country"]').on('change', function(event) {
       }
     })
 })
-<<<<<<< HEAD
 
 // $.get(`http://apiv3.iucnredlist.org/api/v3/species/common_names/loxodonta%20africana?token=${REDLIST_TOKEN}`)
 //   .then(data => $('#results').append(`<h3>Animal: ${data.result[0].taxonname}</h3>`))
@@ -51,5 +50,3 @@ $('select[name="country"]').on('change', function(event) {
 
 
 // Grabs the selected country ISO when country is selected and stores it in selectedCountry
-=======
->>>>>>> 12d67f4dec2dbb9ee7d7eaa2a68f2a99ba91c853
