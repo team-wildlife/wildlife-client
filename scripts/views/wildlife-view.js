@@ -8,11 +8,21 @@ $('select[name="country"]').on('change', function(event) {
   $.get(`${__API_URL__}/api/v1/countries/${selectedCountry}`)
     .then(data => {
       data = JSON.parse(data);
-      $('#results').append(`<h6>Scientific Name: ${data.result[0].scientific_name}</h6><p>Animal ID: ${data.result[0].taxonid}</p>`)
+      $('#results').append(`<h6>Scientific Name: ${data.result[0].scientific_name}</h6><p>Animal ID: ${data.result[0].taxonid}</p>`);
+      let commonName = data.result[0].scientific_name.toLowerCase().replace(' ', '%20');
+      console.log(commonName.toLowerCase());
+      $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
+        .then(commonData => {
+          console.log(data);
+          commonData = JSON.parse(commonData);
+          console.log(commonData)
+          $('#results').append(`<h3>Common Name: ${commonData.result[0].taxonname}</h3>`)
+
+        })
     })
 })
 
-
+// /api/v3/species/common_names/:name?token='YOUR TOKEN'
 
 // $.get(`http://apiv3.iucnredlist.org/api/v3/species/common_names/loxodonta%20africana?token=${REDLIST_TOKEN}`)
 //   .then(data => $('#results').append(`<h3>Animal: ${data.result[0].taxonname}</h3>`))
