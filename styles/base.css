@@ -1,7 +1,6 @@
 body {
   text-align: center;
   font-family: "Spectral SC", serif;
-  font-size: 8em;
   background-color: lightBlue;
 }
 
@@ -9,4 +8,12 @@ select {
   width: 70%;
   height: 5em;
   background-color: cornsilk;
+}
+
+h1 {
+  font-size: 8em;
+}
+
+h3, h6 {
+  font-size: 3em;
 }
