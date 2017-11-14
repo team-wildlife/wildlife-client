@@ -21,7 +21,7 @@ h1 {
   margin-top: 2em;
 }
 
-#results {
+#results-scientific, #results-common {
   font-size: 2em;
   background-color: rgba(255, 0, 0, 0.8);
   width: 70%;
