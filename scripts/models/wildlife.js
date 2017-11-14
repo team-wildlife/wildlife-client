@@ -17,12 +17,12 @@ const __API_URL__ = 'http://localhost:3000';
   }
 
   Animal.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#country').text());
+    var template = Handlebars.compile($('#animal-template').text());
     return template(this);
   };
 
   Animal.addDescription = function(data) {
-    var template = Handlebars.compile($('#country').text());
+    var template = Handlebars.compile($('.byline').text());
     return template(data);
   };
 
@@ -30,24 +30,24 @@ const __API_URL__ = 'http://localhost:3000';
     Animal.all = rawData.map(resultsObj => new Animal(resultsObj));
   };
 
-  Animal.fetchAll = callback => {
-    console.log('fetchAll function called');
+  Animal.fetchOne = callback => {
+    console.log('fetchOne function called');
     $.get(`${__API_URL__}/`)
       .then(Animal.loadAll)
       .then(callback)
       .catch(errorCallback)
   }
 
-  Animal.fetchAll = callback => {
-    console.log('fetchAll function called');
+  Animal.fetchTwo = callback => {
+    console.log('fetchTwo function called');
     $.get(`${__API_URL__}/`)
       .then(Animal.loadAll)
       .then(callback)
       .catch(errorCallback)
   }
 
-  Animal.fetchAll = callback => {
-    console.log('fetchAll function called');
+  Animal.fetchThree = callback => {
+    console.log('fetchThree function called');
     $.get(`${__API_URL__}/`)
       .then(Animal.loadAll)
       .then(callback)
