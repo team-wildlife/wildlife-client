@@ -5,7 +5,6 @@ const __API_URL__ = 'https://team-wildlife.herokuapp.com'
 let randomIndex;
 
 $('select[name="country"]').on('change', function(event) {
-  page('/selectedAnimal', () => app.animalView.selectedAnimalView);
   var selectedCountry = event.target.value;
   console.log(selectedCountry);
   $.get(`${__API_URL__}/api/v1/countries/${selectedCountry}`)

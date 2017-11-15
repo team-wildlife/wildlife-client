@@ -41,6 +41,7 @@ var app = app || {};
 
   $('select[name="country"]').on('change', () => {
     animalView.selectedAnimalView();
+    page('/selectedAnimal', () => app.animalView.selectedAnimalView);
   })
 
   module.animalView = animalView;
