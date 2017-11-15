@@ -32,6 +32,6 @@ var app = app || {};
 })(app);
 
 
-$('.tab a').on('click', () => $('.main-nav ul').addClass('hide-nav'));
+$('.tab').on('click', () => $('.main-nav ul').addClass('hide-nav'));
 $('.icon-menu').click(() => $('.main-nav ul').toggleClass('hide-nav'));
 $('main').on('click', () =>$('.main-nav ul').addClass('hide-nav'));
