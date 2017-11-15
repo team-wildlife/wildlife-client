@@ -31,6 +31,11 @@ var app = app || {};
     $('.main-nav').show();
   }
 
+  animalView.resetView = () => {
+    $('selected-animal-view').empty();
+    $('#results-common').empty();
+  }
+
   $('#about').on('click', () => {
     animalView.initAboutPage()
   })
@@ -40,8 +45,13 @@ var app = app || {};
   })
 
   $('select[name="country"]').on('change', () => {
+    animalView.resetView();
     animalView.selectedAnimalView();
     page('/selectedAnimal');
+  })
+
+  $('.main-nav').on('click', () => {
+    $('.main-nav>ul').show();
   })
 
   module.animalView = animalView;

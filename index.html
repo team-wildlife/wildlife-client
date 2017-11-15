@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Endangered Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Wildlife" />
   <meta property="og:description" content="An app that combines the lasting memories of travel with a conservation mindset, turning globetrotters into globe-savers">
   <meta property="og:url" content="http://www.endangeredtravel.com" />
   <meta property="og:image" content="https://media1.fdncms.com/northcoast/imager/u/original/4714368/marten.jpg" />
   <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="styles/icons.css"> -->
+  <link rel="stylesheet" href="styles/icons.css">
   <link rel="stylesheet" type="text/css" href="./styles/reset.css">
   <link rel="stylesheet" type="text/css" href="./styles/base.css">
   <link rel="stylesheet" type="text/css" href="./styles/layout.css">
@@ -27,14 +28,16 @@
 
 <body>
   <header class="site-header clearfix">
+    <div id="title-container">
+      <h1 id="travel-wild">Travel Wild</h1>
+    </div>
     <nav class="main-nav">
       <span class="icon-menu"></span>
       <ul>
-        <li class="tab" data-content="articles"><a href="/" class="icon-home" id="home"> Home</a></li>
-        <li class="tab" data-content="about"><a href="/about" class="icon-address-book" id="about"> About</a></li>
+        <a href="/" id="home"><li class="tab" data-content="articles">HOME</li></a>
+        <a href="/about" id="about"><li class="tab" data-content="about">ABOUT</li></a>
       </ul>
     </nav>
-    <h1 id="travel-wild">Travel Wild</h1>
   </header>
 
 
@@ -42,34 +45,32 @@
     <option value="" disabled selected hidden>Select Destination</option>
   </select>
 
+
   <section id="selected-animal-view">
     <div id="results-common"></div>
   </section>
 
   <section class="about-view">
-    <div class="link-info">
-      <ul>
-        <li><a href="http://support.iucnredlist.org/">IUCN Red List Information</a></li>
-        <li><a href="https://support.iucnredlist.org/donate">Donate</a></li>
-        <li>IUCN API REFERENCE: IUCN 2017. IUCN Red List of Threatened Species. Version 2017-2</li>
-      </ul>
-    </div>
-    <div class="about-us">
-      <h2>About Us</h2>
-      <img src="" alt="">
-      <p>Catherine</p>
-      <img src="" alt="">
-
-      <p>Nick</p>
-      <img src="" alt="">
-      <p>Dre</p>
-      <img src="" alt="">
-      <p>Jeff</p>
-    </div>
     <div class="our-mission">
       <h2>Our mission at Wild Life Travel, is to combine the lasting memories of travel with a conservation mindset, turning globetrotters into globe-savers.</h2>
       <h3>Select your travel destination to learn more</h3>
     </div>
+    <div class="about-us">
+      <h2>About Us</h2>
+      <p>Catherine Looper</p>
+      <img src="images/catherine3_720.jpg" alt="Catherine Looper">
+      <p>Nick Gibson</p>
+      <img src="images/nick_720.jpg" alt="Nick Gibson">
+      <p>Dre Ibarra</p>
+      <img src="" alt="">
+      <p>Jeff Martinez</p>
+      <img src="images/codefellows.jpg" alt="Jeff Martinez">
+    </div>
+    <ul id="link-info">
+      <a href="http://support.iucnredlist.org/"><li>IUCN Red List Information</li></a>
+      <a href="https://support.iucnredlist.org/donate"><li>Donate</li></a>
+      <li>IUCN API REFERENCE: IUCN 2017. IUCN Red List of Threatened Species. Version 2017-2</li>
+    </ul>
   </section>
 
 <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
