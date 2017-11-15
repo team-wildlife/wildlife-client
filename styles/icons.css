@@ -1,44 +1,3 @@
-.flag-text {
-  margin-left: 10px;
-}
-
-.icon-menu {
-  position: absolute;
-  z-index: 2;
-  top: 5px;
-  right: 5px;
-  font-size:11vw;
-}
-.main-nav {
-  height: 13vw;
-}
-.main-nav h1 {
-  font-size: 7vw;
-  text-align: center;
-  padding-top: 2.2vw;
-}
-.main-nav ul {
-  position: relative;
-  z-index: 1;
-  padding: 0;
-  list-style: none;
-  clear: both;
-  /*background-color: #baddad;*/
-}
-.main-nav li {
-  margin-right: .4em;
-  font-size: 1.5em;
-  padding: .5em .2em;
-  /*border-bottom: 1px solid #ccc;*/
-}
-.hide-nav {
-  display: none;
-<<<<<<< HEAD
-=======
-}
-
-
-
 @font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot?wfb79s');
@@ -108,5 +67,4 @@
 }
 .icon-github:before {
 	content: "\e907";
->>>>>>> ea6d387466cb7e5eb2f3a866b3103f9db819624b
 }
