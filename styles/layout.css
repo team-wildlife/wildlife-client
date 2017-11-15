@@ -1,0 +1,24 @@
+#scientific-name {
+  padding: 1em 0;
+  text-align: left;
+}
+
+#animal-id {
+  font-size: 0.7em;
+  padding: 1em 0;
+  text-align: left;
+
+}
+
+#results-common {
+  padding 1em 0;
+  text-align: left;
+
+}
+
+#animal-description {
+  font-size: 1em;
+  font-family: times;
+  text-align: left;
+
+}
