@@ -42,6 +42,26 @@
   color: white;
 }
 
+#gmap {
+  margin: 0 auto;
+  display: inline-block;
+  border-radius: 10px;
+  width: 52%;
+  margin-top: 15px;
+}
+
+#results-common {
+  font-size: 0.8em;
+  background-color: cornsilk;
+  padding: 1em;
+  border-radius: 10px;
+  color: black;
+  display: inline-block;
+  width: 45%;
+  margin-top: 15px;
+  overflow: scroll;
+}
+
 /*Desktop View*/
 @media only screen and (min-width: 640px) {
   .icon-menu:before {
@@ -71,5 +91,28 @@
     color: white;
     width: 7em;
   }
+
+  #gmap {
+    margin-right: 10px;
+    border: 5px solid darkSlateGray;
+    display: inline-block;
+    float: left;
+    border-radius: 10px;
+    width: 45%;
+    margin-top: 15px;
+  }
+
+  #results-common {
+    font-size: 2em;
+    background-color: cornsilk;
+    padding: 1em;
+    border: 5px solid darkSlateGray;
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+    width: 45%;
+    margin-top: 15px;
+  }
+
 
 }

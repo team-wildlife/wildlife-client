@@ -6,15 +6,14 @@ var app = app || {};
 
 
   animalView.initIndexPage = () => {
+    $('#gmap').hide();
     $('.about-view').hide();
-    $('selected-animal-view').hide();
     $('#results-common').hide();
     $('#travel-wild').show();
     $('#country-list').show();
   };
 
   animalView.initAboutPage = () => {
-    $('selected-animal-view').hide();
     $('#results-common').hide();
     $('#country-list').hide();
     $('#travel-wild').show();
@@ -25,14 +24,13 @@ var app = app || {};
   animalView.selectedAnimalView = () => {
     $('.about-view').hide();
     $('#travel-wild').hide();
-    $('selected-animal-view').show();
+    $('#gmap').show();
     $('#results-common').show();
     $('#country-list').show();
     $('.main-nav').show();
   }
 
   animalView.resetView = () => {
-    $('selected-animal-view').empty();
     $('#results-common').empty();
   }
 
