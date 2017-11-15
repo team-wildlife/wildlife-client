@@ -9,6 +9,10 @@ body {
   color: cornsilk;
 }
 
+a {
+  text-decoration: none;
+}
+
 select {
   width: 70%;
   height: 5em;
@@ -17,53 +21,36 @@ select {
   color: rgb(80, 80, 80);
 }
 
+/*#title-container {
+  max-width: 80%;
+  margin: 0 auto;
+}*/
+
 h1 {
-  font-size: 8em;
-  /*margin-top: 2em;*/
+  font-size: 10vw;
+  padding: 0.3em;
+  margin: 0.3em 0.25em;
+  text-align: center;
 }
 
 #results-common {
   font-size: 2em;
-  background-color: rgba(255, 0, 0, 0.8);
+  background-color: cornsilk;
   width: 70%;
   margin: 0 auto;
   margin-top: 3em;
   padding: 1em;
-  border: 2px solid rgb(255, 0, 0);
+  border: 5px solid darkSlateGray;
   border-radius: 10px;
-  color: white;
-}
-
-.link-info {
-  font-size: 1em;
-  background-color: rgba(228, 172, 98, 0.8);
-  width: 60%;
-  margin: 0 auto;
-  margin-top: 3em;
-  padding: 2em;
   color: black;
-}
-
-a {
-  text-decoration: none;
 }
 
 .about-us {
   font-size: 2em;
-  background-color: rgba(228, 172, 98, 0.8);
+  background-color: rgba(255, 0, 0, 0.8);
   width: 60%;
   margin: 0 auto;
   margin-top: 1em;
   padding: 1em;
   color: black;
 }
-
-/*.site-header {
-  background-color: #FFEAAA;
-}
-
-.site-header ul li {
-  list-style: none;
-  display: inline-block;
-  display: none;
-}*/

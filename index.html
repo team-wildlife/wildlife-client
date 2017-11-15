@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Endangered Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Wildlife" />
   <meta property="og:description" content="An app that combines the lasting memories of travel with a conservation mindset, turning globetrotters into globe-savers">
   <meta property="og:url" content="http://www.endangeredtravel.com" />
   <meta property="og:image" content="https://media1.fdncms.com/northcoast/imager/u/original/4714368/marten.jpg" />
   <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="styles/icons.css"> -->
+  <link rel="stylesheet" href="styles/icons.css">
   <link rel="stylesheet" type="text/css" href="./styles/reset.css">
   <link rel="stylesheet" type="text/css" href="./styles/base.css">
   <link rel="stylesheet" type="text/css" href="./styles/layout.css">
@@ -27,20 +28,23 @@
 
 <body>
   <header class="site-header clearfix">
+    <div id="title-container">
+      <h1 id="travel-wild">Travel Wild</h1>
+    </div>
     <nav class="main-nav">
       <span class="icon-menu"></span>
       <ul>
-        <li class="tab" data-content="articles"><a href="/" class="icon-home" id="home"> Home</a></li>
-        <li class="tab" data-content="about"><a href="/about" class="icon-address-book" id="about"> About</a></li>
+        <a href="/" id="home"><li class="tab" data-content="articles">HOME</li></a>
+        <a href="/about" id="about"><li class="tab" data-content="about">ABOUT</li></a>
       </ul>
     </nav>
-    <h1 id="travel-wild">Travel Wild</h1>
   </header>
 
 
   <select id="country-list" name="country" >
     <option value="" disabled selected hidden>Select Destination</option>
   </select>
+
 
   <section id="selected-animal-view">
     <div id="results-common"></div>
@@ -56,14 +60,14 @@
     </div>
     <div class="about-us">
       <h2>About Us</h2>
-      <img src="" alt="">
       <p>Catherine Looper</p>
-      <img src="images/catherine3_720.jpg" alt="">
-      <p>Nick</p>
-      <img src="images/nick_720.jpg" alt="">
-      <p>Dre</p>
-      <img src="" alt="">
-      <p>Jeff</p>
+      <img src="images/catherine3_720.jpg" alt="Catherine Looper">
+      <p>Nick Gibson</p>
+      <img src="images/nick_720.jpg" alt="Nick Gibson">
+      <p>Dre Ibarra</p>
+      <img src="" alt="Dre Ibarra">
+      <p>Jeff Martinez</p>
+      <img src="images/codefellows.jpg" alt="Jeff Martinez">
     </div>
     <div class="our-mission">
       <h2>Our mission at Wild Life Travel, is to combine the lasting memories of travel with a conservation mindset, turning globetrotters into globe-savers.</h2>
