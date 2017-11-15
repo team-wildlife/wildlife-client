@@ -68,3 +68,52 @@
 .icon-github:before {
 	content: "\e907";
 }
+
+.fa {
+  padding: 10px;
+  font-size: 15px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+.fa:hover {
+  opacity: 0.6;
+  }
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  border-radius: 50%;
+  }
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  border-radius: 50%;
+}
+
+footer {
+  clear: both;
+}
+
+footer nav {
+  margin: 0 auto 10px;
+  width: 700px;
+}
+
+footer ul {
+  margin: 10 auto;
+}
+
+footer ul li {
+  display: inline-block;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+footer ul li:first-child {
+  margin-right: 10px;
+}
