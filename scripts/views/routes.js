@@ -7,7 +7,7 @@ if(window.location.pathname !== '/') {
 }
 
 page('/', app.Animal.fetchAll(app.animalView.initIndexPage));
-page('/results', app.animalView.initResultsPage);
+// page('/results', app.animalView.initResultsPage);
 page('/about', app.animalView.initAboutPage);
 
 

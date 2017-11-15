@@ -30,28 +30,13 @@ const __API_URL__ = 'http://localhost:3000';
     Animal.all = rawData.map(resultsObj => new Animal(resultsObj));
   };
 
-  Animal.fetchOne = callback => {
-    console.log('fetchOne function called');
-    $.get(`${__API_URL__}/`)
-      .then(Animal.loadAll)
-      .then(callback)
-      .catch(errorCallback)
-  }
-
-  Animal.fetchTwo = callback => {
-    console.log('fetchTwo function called');
-    $.get(`${__API_URL__}/`)
-      .then(Animal.loadAll)
-      .then(callback)
-      .catch(errorCallback)
-  }
-
-  Animal.fetchThree = callback => {
-    console.log('fetchThree function called');
-    $.get(`${__API_URL__}/`)
-      .then(Animal.loadAll)
-      .then(callback)
-      .catch(errorCallback)
+  Animal.fetchAll = callback => {
+    console.log('fetchAll function called');
+    callback(); //testing, take out later//
+    // $.get(`${__API_URL__}/`)
+    //   .then(Animal.loadAll)
+    //   .then(callback)
+    //   .catch(errorCallback)
   }
 
   module.Animal = Animal;

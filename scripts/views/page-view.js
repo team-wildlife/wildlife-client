@@ -22,9 +22,13 @@ var app = app || {};
     $('#home').fadeIn();
   };
 
+  $(document).ready(function() {
+    app.Animal.fetchAll(animalView.initIndexPage);
+  });
+
   animalView.initAboutPage = () => {
     console.log('animal.all.initAboutPage function called');
-    $('.tab-content').hide();
+    $('.about-view').hide();
     $('#about').fadeIn();
   };
 
