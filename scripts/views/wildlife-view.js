@@ -1,7 +1,7 @@
 'use strict'
 
 // const __API_URL__ = 'http://localhost:3000';
-let __API_URL__ = 'https://team-wildlife.herokuapp.com'
+var __API_URL__ = 'https://team-wildlife.herokuapp.com'
 let randomIndex;
 
 $('select[name="country"]').on('change', function(event) {
