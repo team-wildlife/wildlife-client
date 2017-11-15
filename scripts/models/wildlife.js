@@ -1,13 +1,10 @@
 'use strict'
 
-// const __API_URL__ = 'http://localhost:3000';
 const __API_URL__ = 'https://team-wildlife.herokuapp.com'
 let randomIndex;
 
 $('select[name="country"]').on('change', function(event) {
   var selectedCountry = event.target.value;
-  // var selectedCountryFullName = event.target.name;
-  // console.log('country name', selectedCountryFullName);
   $('#gmap').attr('src', `https://maps.googleapis.com/maps/api/staticmap?center=${selectedCountry}&zoom=5&mapTypeControl=false&disableDefaultUI=true&draggable=false&maptype=hybrid&size=640x480`)
   console.log(selectedCountry);
   $.get(`${__API_URL__}/api/v1/countries/${selectedCountry}`)
@@ -36,5 +33,18 @@ $('select[name="country"]').on('change', function(event) {
         })
 
     })
+
+})
+
+
+$('select[name="category"]').on('change', function(event) {
+  var selectedCategory = event.target.value;
+  console.log(selectedCategory);
+  $.get(`${__API_URL__}/api/v1/category/${selectedCategory}`)
+    .then(categoryData => {
+      categoryData = JSON.parse(categoryData);
+      $('#category-results').append(`<h3>Species:${categoryData.result[0].scientific_name}</h3>`)
+    })
+
 
 })

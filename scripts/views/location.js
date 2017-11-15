@@ -249,7 +249,7 @@ $(function() {
 
   function createCountry (country) {
     let $location = $(`<option value="${country.id}" name="${country.text}">${country.text}</option>`);
-    $('select').append($location);
+    $('#country-list').append($location);
   }
   countryData.forEach(x => createCountry(x));
 
