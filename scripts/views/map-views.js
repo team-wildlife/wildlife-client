@@ -5,7 +5,7 @@ let lat = {}
 lat.val = JSON.parse(localStorage.getItem('lat'));
 let lng = {}
 lng.val = JSON.parse(localStorage.getItem('lng'));
-function myMap() {
+function initMap() {
   var mapProp= {
     center:new google.maps.LatLng(lat.val, (lng.val + 18)),
     zoom:5,
@@ -74,5 +74,5 @@ function myMap() {
       }
     ]
   };
-  var map=new google.maps.Map(document.getElementById('googleMap'),mapProp);
+  var map = new google.maps.Map(document.getElementById('gmaps'), mapProp);
 }
