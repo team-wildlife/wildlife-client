@@ -14,7 +14,7 @@ var app = app || {};
   };
 
   animalView.initAboutPage = () => {
-    $('selected-animal-view').hide();
+    $('#selected-animal-view').hide();
     $('#results-common').hide();
     $('#country-list').hide();
     $('#travel-wild').show();
