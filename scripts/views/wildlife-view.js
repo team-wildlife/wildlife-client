@@ -63,7 +63,7 @@ var app = app || {};
   $('select[name="country"]').on('change', () => {
     animalView.resetView();
     animalView.selectedAnimalView();
-    page('/selectedAnimal');
+    page('/selectedCountry');
   })
 
   $('select[name="category"]').on('change', () => {
