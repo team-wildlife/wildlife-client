@@ -25,16 +25,20 @@ select {
   color: rgb(80, 80, 80);
 }
 
-/*#title-container {
-  max-width: 80%;
-  margin: 0 auto;
-}*/
-
 h1 {
   font-size: 10vw;
   padding: 0.3em;
   margin: 0.3em 0.25em;
   text-align: center;
+}
+
+h3 {
+  margin: 20px 0;
+}
+
+span {
+  font-weight: 800;
+  text-decoration: underline;
 }
 
 #link-info li {
