@@ -49,6 +49,7 @@ var app = app || {};
 
   animalView.resetView = () => {
     $('#results-common').empty();
+    $('#category-results').empty();
   }
 
   $('#about').on('click', () => {
