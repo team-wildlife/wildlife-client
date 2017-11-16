@@ -16,6 +16,7 @@ var app = app || {};
   };
 
   animalView.initAboutPage = () => {
+    $('#gmap').hide();
     $('#results-common').hide();
     $('#country-list').hide();
     $('#species-by-category').hide();

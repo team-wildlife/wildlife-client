@@ -29,7 +29,7 @@ $('select[name="country"]').on('change', function(event) {
           if(commonData.result.length > 0) {
             $('#newAnimal').prepend(`<h3><span>Common Name:</span> ${commonData.result[0].taxonname}</h3>`)
           } else {
-            $('#newAnimal').prepend('<h3><span>Common Name:</span> Common Name Data Does Not Exist For this Species</h3>');
+            $('#newAnimal').prepend('<h3><span>Common Name:</span> The Red List does not have Data Does Not Exist For this Species</h3>');
           }
         });
       $.get(`${__API_URL__}/api/v1/narrative/${commonName}`)

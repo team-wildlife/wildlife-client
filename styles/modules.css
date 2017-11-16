@@ -62,9 +62,11 @@
   margin-top: 15px;
 }
 
-/*#loadingDiv {
-  max-width: 35%;
-}*/
+footer nav {
+  display: inline-block;
+  padding: 1em;
+  margin: 0 auto;
+}
 
 /*Desktop View*/
 @media only screen and (min-width: 640px) {
@@ -88,12 +90,17 @@
     padding: 1em 2em;
     border: 2px solid #ccc;
     background-color: black;
+    display: inline-block;
   }
 
   .main-nav li:hover {
     background-color: darkSlateGray;
     color: white;
     width: 7em;
+  }
+
+  #travel-wild {
+    margin: 0 auto;
   }
 
   #gmap {
@@ -115,7 +122,7 @@
     display: inline-block;
     width: 45%;
     margin-top: 15px;
-    height: 500px;
+    height: 445px;
     overflow: scroll;
     text-align: left;
   }
@@ -124,8 +131,6 @@
     max-width: 40%;
   }
 
-
-=======
   footer nav {
     display: inline-block;
     padding: 1em;
