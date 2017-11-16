@@ -12,7 +12,7 @@
 
 #home, #about {
   color: cornsilk;
-  padding: 0.5em;
+  padding: 0.1em;
 }
 
 .main-nav {
@@ -24,10 +24,6 @@
   padding: 0;
   list-style: none;
   clear: both;
-}
-
-.main-nav:hover ul {
-  display: block;
 }
 
 .main-nav li {
@@ -60,12 +56,6 @@
   display: inline-block;
   width: 45%;
   margin-top: 15px;
-}
-
-footer nav {
-  display: inline-block;
-  padding: 1em;
-  margin: 0 auto;
 }
 
 /*Desktop View*/
@@ -105,7 +95,6 @@ footer nav {
 
   #gmap {
     margin: 15px 10px 0 20px;
-    border: 5px solid darkSlateGray;
     display: inline-block;
     float: left;
     border-radius: 10px;
@@ -116,22 +105,16 @@ footer nav {
     font-size: 2em;
     background-color: cornsilk;
     padding: 1em;
-    border: 5px solid darkSlateGray;
     border-radius: 10px;
     color: black;
     display: inline-block;
     width: 45%;
     margin-top: 15px;
-    height: 445px;
+    height: 500px;
     overflow: scroll;
     text-align: left;
   }
 
   #loadingDiv {
     max-width: 40%;
-  }
-
-  footer nav {
-    display: inline-block;
-    padding: 1em;
   }
