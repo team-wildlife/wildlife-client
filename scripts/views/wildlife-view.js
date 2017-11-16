@@ -29,7 +29,7 @@ var app = app || {};
   animalView.selectedAnimalView = () => {
     $('.about-view').hide();
     $('#travel-wild').hide();
-    $('#species-by-category').hide();
+    // $('#species-by-category').hide();
     $('#category-results').hide();
     $('#gmap').show();
     $('#results-common').show();
@@ -41,7 +41,7 @@ var app = app || {};
     $('.about-view').hide();
     $('#gmap').hide();
     $('#results-common').hide();
-    $('#country-list').hide();
+    // $('#country-list').hide();
     $('#travel-wild').show();
     $('.main-nav').show();
     $('#species-by-category').show();
