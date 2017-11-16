@@ -18,10 +18,10 @@ $('select[name="country"]').on('change', function(event) {
       console.log('data', data);
       randomIndex = Math.floor(Math.random()*data.result.length);
       $('#results-common').append(`<h6 id="newAnimal">Scientific Name: ${data.result[randomIndex].scientific_name}</h6><p>Animal ID: ${data.result[randomIndex].taxonid}</p>`)
-      let scientificName = data.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
-      console.log(scientificName.toLowerCase());
+      let commonName = data.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
+      console.log(commonName.toLowerCase());
 
-      $.get(`${__API_URL__}/api/v1/scientificName/${scientificName}`)
+      $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
         .then(commonData => {
           commonData = JSON.parse(commonData);
           console.log('common data', commonData);
@@ -31,7 +31,7 @@ $('select[name="country"]').on('change', function(event) {
             $('#newAnimal').append('<h3>Common Name: Common Name Data Does Not Exist For this Species</h3>');
           }
         });
-      $.get(`${__API_URL__}/api/v1/narrative/${scientificName}`)
+      $.get(`${__API_URL__}/api/v1/narrative/${commonName}`)
         .then(descriptionData => {
           descriptionData = JSON.parse(descriptionData);
           $('#newAnimal').append(`<h3>Description: ${descriptionData.result[0].rationale}</h3>`)
@@ -53,10 +53,10 @@ $('select[name="category"]').on('change', function(event) {
       categoryData = JSON.parse(categoryData);
       randomIndex = Math.floor(Math.random()*categoryData.result.length);
       $('#category-results').append(`<h3>Species Scientific Name:${categoryData.result[randomIndex].scientific_name}</h3>`)
-      let scientificName = categoryData.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
-      console.log(scientificName.toLowerCase());
+      let commonName = categoryData.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
+      console.log(commonName.toLowerCase());
 
-      $.get(`${__API_URL__}/api/v1/scientificName/${scientificName}`)
+      $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
         .then(commonData => {
           commonData = JSON.parse(commonData);
           console.log('common data', commonData);
@@ -66,7 +66,7 @@ $('select[name="category"]').on('change', function(event) {
             $('#category-results').append('<h3>Common Name: Common Name Data Does Not Exist For this Species</h3>');
           }
         });
-      $.get(`${__API_URL__}/api/v1/narrative/${scientificName}`)
+      $.get(`${__API_URL__}/api/v1/narrative/${commonName}`)
         .then(descriptionData => {
           descriptionData = JSON.parse(descriptionData);
           $('#category-results').append(`<h3>Description: ${descriptionData.result[0].rationale}</h3>`)
