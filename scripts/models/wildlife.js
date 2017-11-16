@@ -36,7 +36,7 @@ $('select[name="country"]').on('change', function(event) {
       $.get(`${__API_URL__}/api/v1/images/${commonName}`)
         .then(imageData => {
           imageData = JSON.parse(imageData);
-          $('#newAnimal').append(`<img src=${imageData.value[1].contentUrl} />`)
+          $('#newAnimal').append(`<img src=${imageData.value[0].contentUrl} />`)
         })
       /// Image stuff //
     })
