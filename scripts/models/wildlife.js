@@ -76,9 +76,14 @@ $('select[name="category"]').on('change', function(event) {
         .then(descriptionData => {
           descriptionData = JSON.parse(descriptionData);
           $('#category-results').append(`<h3>Description: ${descriptionData.result[0].rationale}</h3>`)
+
+          $.get(`${__API_URL__}/api/v1/images/${commonName}`)
+            .then(imageData => {
+              imageData = JSON.parse(imageData);
+              $('#category-results').append(`<img src=${imageData.value[0].contentUrl} />`)
+            })
         })
     })
-
 })
 
 var $loading = $('#loadingDiv').hide();
