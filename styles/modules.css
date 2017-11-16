@@ -62,6 +62,10 @@
   margin-top: 15px;
 }
 
+/*#loadingDiv {
+  max-width: 35%;
+}*/
+
 /*Desktop View*/
 @media only screen and (min-width: 640px) {
   .icon-menu:before {
@@ -111,6 +115,9 @@
     display: inline-block;
     width: 45%;
     margin-top: 15px;
+    height: 480px;
+    overflow: scroll;
+    text-align: left;
   }
 
   #loadingDiv {

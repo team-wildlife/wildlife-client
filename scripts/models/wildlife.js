@@ -17,7 +17,7 @@ $('select[name="country"]').on('change', function(event) {
       data = JSON.parse(data);
       console.log('data', data);
       randomIndex = Math.floor(Math.random()*data.result.length);
-      $('#results-common').append(`<h6 id="newAnimal">Scientific Name: ${data.result[randomIndex].scientific_name}</h6><p>Animal ID: ${data.result[randomIndex].taxonid}</p>`)
+      $('#results-common').append(`<h3 id="newAnimal"><span>Scientific Name:</span> ${data.result[randomIndex].scientific_name}</h3>`)
       let commonName = data.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
       console.log(commonName.toLowerCase());
 
@@ -26,26 +26,25 @@ $('select[name="country"]').on('change', function(event) {
           commonData = JSON.parse(commonData);
           console.log('common data', commonData);
           if(commonData.result.length > 0) {
-            $('#newAnimal').append(`<h3>Common Name: ${commonData.result[0].taxonname}</h3>`)
+            $('#newAnimal').prepend(`<h3><span>Common Name:</span> ${commonData.result[0].taxonname}</h3>`)
           } else {
-            $('#newAnimal').append('<h3>Common Name: Common Name Data Does Not Exist For this Species</h3>');
+            $('#newAnimal').prepend('<h3><span>Common Name:</span> Common Name Data Does Not Exist For this Species</h3>');
           }
         });
       $.get(`${__API_URL__}/api/v1/narrative/${commonName}`)
         .then(descriptionData => {
           descriptionData = JSON.parse(descriptionData);
-          $('#newAnimal').append(`<h3>Description: ${descriptionData.result[0].rationale}</h3>`)
+          $('#newAnimal').append(`<h3><span>Description:</span> ${descriptionData.result[0].rationale}</h3>`)
 
           $.get(`${__API_URL__}/api/v1/images/${commonName}`)
             .then(imageData => {
               imageData = JSON.parse(imageData);
-              $('#newAnimal').append(`<img src=${imageData.value[0].contentUrl} />`)
+              $('#newAnimal').prepend(`<img class="species-image" src=${imageData.value[0].contentUrl} />`)
             })
         })
-
     })
-
 })
+
 
 // +++++++++++++++++++++++++++++++
 // API Calls For Category Selection
@@ -58,7 +57,7 @@ $('select[name="category"]').on('change', function(event) {
     .then(categoryData => {
       categoryData = JSON.parse(categoryData);
       randomIndex = Math.floor(Math.random()*categoryData.result.length);
-      $('#category-results').append(`<h3>Species Scientific Name:${categoryData.result[randomIndex].scientific_name}</h3><p>Animal ID: ${categoryData.result[randomIndex].taxonid}</p>`)
+      $('#category-results').append(`<h3><span>Scientific Name: </span>${categoryData.result[randomIndex].scientific_name}</h3>`)
       let commonName = categoryData.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
       console.log(commonName.toLowerCase());
 
@@ -67,20 +66,20 @@ $('select[name="category"]').on('change', function(event) {
           commonData = JSON.parse(commonData);
           console.log('common data', commonData);
           if(commonData.result.length > 0) {
-            $('#category-results').append(`<h3>Common Name: ${commonData.result[0].taxonname}</h3>`)
+            $('#category-results').prepend(`<h3><span>Common Name:</span> ${commonData.result[0].taxonname}</h3>`)
           } else {
-            $('#category-results').append('<h3>Common Name: Common Name Data Does Not Exist For this Species</h3>');
+            $('#category-results').prepend('<h3><span>Common Name:</span> Common Name Data Does Not Exist For this Species</h3>');
           }
         });
       $.get(`${__API_URL__}/api/v1/narrative/${commonName}`)
         .then(descriptionData => {
           descriptionData = JSON.parse(descriptionData);
-          $('#category-results').append(`<h3>Description: ${descriptionData.result[0].rationale}</h3>`)
+          $('#category-results').append(`<h3><span>Description:</span> ${descriptionData.result[0].rationale}</h3>`)
 
           $.get(`${__API_URL__}/api/v1/images/${commonName}`)
             .then(imageData => {
               imageData = JSON.parse(imageData);
-              $('#category-results').append(`<img src=${imageData.value[0].contentUrl} />`)
+              $('#category-results').prepend(`<img class="species-image" src=${imageData.value[0].contentUrl} />`)
             })
         })
     })

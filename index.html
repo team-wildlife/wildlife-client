@@ -17,14 +17,15 @@
   <link rel="stylesheet" type="text/css" href="./styles/modules.css">
 
   <script id="animal-template" type="text/x-handlebars-template">
-    <article class="clearfix country" data-fetchone="{{scientific_id}}">
-      <header>
-        <h2>{{scientific_name}} {{animal_name}}</h2><h4>{{}}</h4>
-        <div class="byline"><h3>By {{"place-description-here"}}</h3></div>
-      </header>
-      <section class="animal-img"><img src="{{image_url}}" /></section>
-    </article>
+    <!-- <article class="clearfix country" data-fetchone="{{scientific_id}}"> -->
+    <img src="{{contentUrl}}"/>
+    <h1>{{taxonname}}</h1>
+    <h1>{{scientific_name}}</h1>
+    <h1>{{taxonid}}</h1>
+    <h1>{{rationale}}</h1>
+    <!-- </article> -->
   </script>
+
 </head>
 <body>
   <header class="site-header clearfix">
@@ -40,14 +41,14 @@
     </nav>
   </header>
 
-  <div class="wrap">
+  <!-- <div class="wrap">
    <div class="search">
       <input type="text" class="searchTerm" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">
         <i class="fa fa-search"></i>
      </button>
    </div>
-</div>
+</div> -->
 
   <select id="country-list" name="country" >
     <option value="" disabled selected hidden>Select Destination</option>
