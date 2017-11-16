@@ -52,7 +52,7 @@ $('select[name="category"]').on('change', function(event) {
     .then(categoryData => {
       categoryData = JSON.parse(categoryData);
       randomIndex = Math.floor(Math.random()*categoryData.result.length);
-      $('#category-results').append(`<h3>Species Scientific Name:${categoryData.result[randomIndex].scientific_name}</h3>`)
+      $('#category-results').append(`<h3>Species Scientific Name:${categoryData.result[randomIndex].scientific_name}</h3><p>Animal ID: ${categoryData.result[randomIndex].taxonid}</p>`)
       let commonName = categoryData.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
       console.log(commonName.toLowerCase());
 
@@ -74,3 +74,12 @@ $('select[name="category"]').on('change', function(event) {
     })
 
 })
+
+var $loading = $('#loadingDiv').hide();
+$(document)
+  .ajaxStart(function () {
+    $loading.show();
+  })
+  .ajaxStop(function () {
+    $loading.hide();
+  });
