@@ -10,7 +10,8 @@ let randomIndex;
 
 $('select[name="country"]').on('change', function(event) {
   var selectedCountry = event.target.value;
-  $('#gmap').attr('src', `https://maps.googleapis.com/maps/api/staticmap?center=${selectedCountry}&zoom=5&mapTypeControl=false&disableDefaultUI=true&draggable=false&maptype=hybrid&size=640x480`)
+  var fullCountryName = $('#country-list option:selected').text();
+  $('#gmap').attr('src', `https://maps.googleapis.com/maps/api/staticmap?center=${fullCountryName}&zoom=5&mapTypeControl=false&disableDefaultUI=true&draggable=false&maptype=hybrid&size=640x480`)
   console.log(selectedCountry);
   $.get(`${__API_URL__}/api/v1/countries/${selectedCountry}`)
     .then(data => {
