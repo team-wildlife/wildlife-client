@@ -86,6 +86,7 @@ var app = app || {};
   module.animalView = animalView;
 })(app);
 
+// Init Index Page is also being called in routes.js - code works for now
 $(document).ready(function() {
   app.animalView.initIndexPage();
 });

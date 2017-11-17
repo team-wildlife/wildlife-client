@@ -17,10 +17,14 @@ img {
   max-width: 50%;
 }
 
-#jeff {
+#wildlifephoto {
+  max-width: 100%;
+}
+
+/*#jeff, #nick {
   max-width: 30%;
   object-fit: cover;
-}
+}*/
 
 select {
   width: 70%;
