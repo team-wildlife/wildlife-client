@@ -1,76 +1,89 @@
-'use strict';
-var app = app || {};
+'use strict'
 
-// const __API_URL__ = 'https://team-wildlife.herokuapp.com';
-const __API_URL__ = 'http://localhost:3000';
+const __API_URL__ = 'https://team-wildlife.herokuapp.com'
+let randomIndex;
 
-((module) => {
-  Animal.all = [];
-
-  function errorCallback(err) {
-    console.error(err);
-    module.errorView.initErrorPage(err);
-  }
-
-  function Animal(rawDataObj) {
-    Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
-  }
-
-  Animal.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#animal-template').text());
-    return template(this);
-  };
-
-  Animal.addDescription = function(data) {
-    var template = Handlebars.compile($('.byline').text());
-    return template(data);
-  };
-
-  Animal.loadAll = rawData => {
-    Animal.all = rawData.map(resultsObj => new Animal(resultsObj));
-  };
-
-  Animal.fetchOne = callback => {
-    console.log('fetchOne function called');
-    $.get(`${__API_URL__}/`)
-      .then(Animal.loadAll)
-      .then(callback)
-      .catch(errorCallback)
-  }
-
-  Animal.fetchTwo = callback => {
-    console.log('fetchTwo function called');
-    $.get(`${__API_URL__}/`)
-      .then(Animal.loadAll)
-      .then(callback)
-      .catch(errorCallback)
-  }
-
-  Animal.fetchThree = callback => {
-    console.log('fetchThree function called');
-    $.get(`${__API_URL__}/`)
-      .then(Animal.loadAll)
-      .then(callback)
-      .catch(errorCallback)
-  }
-
-  // Animal.prototype.insertRecord = function(callback) {
-  //   $.post(`${__API_URL__}/`, {})
-  //     .then(app.Animal.fetchAll())
-  //     .then(callback)
-  // };
+// +++++++++++++++++++++++++++++++
+// API Calls For Country Selection
+// +++++++++++++++++++++++++++++++
 
 
-  module.Animal = Animal;
-})(app);
+$('select[name="country"]').on('change', function(event) {
+  var selectedCountry = event.target.value;
+  var fullCountryName = $('#country-list option:selected').text();
+  $('#gmap').attr('src', `https://maps.googleapis.com/maps/api/staticmap?center=${fullCountryName}&zoom=5&mapTypeControl=false&disableDefaultUI=true&draggable=false&maptype=hybrid&size=640x480&key=AIzaSyCmP-O1bCwngC_XqyfvIyjWpXLa46gAt9o`)
+  $.get(`${__API_URL__}/api/v1/countries/${selectedCountry}`)
+    .then(data => {
+      data = JSON.parse(data);
+      randomIndex = Math.floor(Math.random()*data.result.length);
+      $('#results-common').append(`<h3 id="newAnimal"><span class="text-bold">Scientific Name:</span> ${data.result[randomIndex].scientific_name}</h3>`)
+      let commonName = data.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
+
+      $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
+        .then(commonData => {
+          commonData = JSON.parse(commonData);
+          if(commonData.result.length > 0) {
+            $('#newAnimal').prepend(`<h3><span class="text-bold">Common Name:</span> ${commonData.result[0].taxonname}</h3>`)
+          } else {
+            $('#newAnimal').prepend('<h3><span class="text-bold">Common Name:</span> Red List Common Name Data Does Not Exist For this Species</h3>');
+          }
+        });
+      $.get(`${__API_URL__}/api/v1/narrative/${commonName}`)
+        .then(descriptionData => {
+          descriptionData = JSON.parse(descriptionData);
+          $('#newAnimal').append(`<h3><span class="text-bold">Description:</span> ${descriptionData.result[0].rationale}</h3>`)
+
+          $.get(`${__API_URL__}/api/v1/images/${commonName}`)
+            .then(imageData => {
+              imageData = JSON.parse(imageData);
+              $('#newAnimal').prepend(`<img class="species-image" src=${imageData.value[0].contentUrl} />`)
+            })
+        })
+    })
+})
 
 
+// +++++++++++++++++++++++++++++++
+// API Calls For Category Selection
+// +++++++++++++++++++++++++++++++
 
-Animal.all.handleAnimalSelection = () => {
-  $('#country').on('click', '.country', function() {
-    $('#country .country').hide();
-    $('#country').empty();
-    $('#country').fadeIn();
-    app.Animal.fetchAll($(this).data('fetchAll'));
+$('select[name="category"]').on('change', function(event) {
+  var selectedCategory = event.target.value;
+  $.get(`${__API_URL__}/api/v1/category/${selectedCategory}`)
+    .then(categoryData => {
+      categoryData = JSON.parse(categoryData);
+      randomIndex = Math.floor(Math.random()*categoryData.result.length);
+      $('#category-results').append(`<h3><span class="text-bold">Scientific Name: </span>${categoryData.result[randomIndex].scientific_name}</h3>`)
+      let commonName = categoryData.result[randomIndex].scientific_name.toLowerCase().replace(' ', '%20');
+
+      $.get(`${__API_URL__}/api/v1/commonName/${commonName}`)
+        .then(commonData => {
+          commonData = JSON.parse(commonData);
+          if(commonData.result.length > 0) {
+            $('#category-results').prepend(`<h3><span class="text-bold">Common Name:</span> ${commonData.result[0].taxonname}</h3>`)
+          } else {
+            $('#category-results').prepend('<h3><span class="text-bold">Common Name:</span> Red List Common Name Data Does Not Exist For this Species</h3>');
+          }
+        });
+      $.get(`${__API_URL__}/api/v1/narrative/${commonName}`)
+        .then(descriptionData => {
+          descriptionData = JSON.parse(descriptionData);
+          $('#category-results').append(`<h3><span class="text-bold">Description:</span> ${descriptionData.result[0].rationale}</h3>`)
+
+          $.get(`${__API_URL__}/api/v1/images/${commonName}`)
+            .then(imageData => {
+              imageData = JSON.parse(imageData);
+              $('#category-results').prepend(`<img class="species-image" src=${imageData.value[0].contentUrl} />`)
+            })
+        })
+    })
+})
+
+var $loading = $('#loadingDiv').hide();
+$(document)
+  .ajaxStart(function () {
+    $loading.show();
+  })
+  .ajaxStop(function () {
+    $loading.hide();
   });
-};
