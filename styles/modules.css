@@ -5,6 +5,14 @@
   float: center;
 }
 
+select {
+  width: 70%;
+  height: 5em;
+  background-color: cornsilk;
+  font-size: 1em;
+  color: rgb(80, 80, 80);
+}
+
 #country-list {
   clear: both;
   margin-bottom: 20px;
@@ -62,6 +70,14 @@
 @media only screen and (min-width: 640px) {
   .icon-menu:before {
     display: none;
+  }
+
+  select {
+    width: 70%;
+    height: 5em;
+    background-color: cornsilk;
+    font-size: 1.5em;
+    color: rgb(80, 80, 80);
   }
 
   .main-nav {

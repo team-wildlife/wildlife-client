@@ -26,14 +26,6 @@ img {
   object-fit: cover;
 }*/
 
-select {
-  width: 70%;
-  height: 5em;
-  background-color: cornsilk;
-  font-size: 1.5em;
-  color: rgb(80, 80, 80);
-}
-
 h1 {
   font-size: 10vw;
   padding: 0.3em;
